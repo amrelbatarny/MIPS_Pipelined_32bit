@@ -59,6 +59,7 @@ The included documentation provides a detailed explanation of the design and imp
 We welcome contributions to this educational project. Feel free to submit pull requests for improvements or additional features.
 
 **Contact:**
+
 <a href="https://beacons.ai/amrelbatarny" target="_blank">
   <img align="left" alt="Beacons" width="180px" src="https://www.colormango.com/development/boxshot/beacons-ai_154511.png" />
 </a> 
