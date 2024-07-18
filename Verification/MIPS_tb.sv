@@ -35,9 +35,9 @@ module MIPS_tb ();
 	end
 
 	initial begin
-		$readmemh("C:/VLSI/Projects/MIPS_pipelined/Memory_Initialization/InstructionMemory.dat", DUT.Datapath.InstructionMemory_inst.Instructions);
-		$readmemh("C:/VLSI/Projects/MIPS_pipelined/Memory_Initialization/DataMemory.dat", DUT.Datapath.DataMemory_inst.Data);
-		$readmemh("C:/VLSI/Projects/MIPS_pipelined/Memory_Initialization/RegisterFile.dat", DUT.Datapath.RegisterFile_inst.Registers);
+		$readmemh("C:/VLSI/Projects/MIPS_Pipelined_32bit/Memory_Initialization/InstructionMemory.dat", DUT.Datapath.InstructionMemory_inst.Instructions);
+		$readmemh("C:/VLSI/Projects/MIPS_Pipelined_32bit/Memory_Initialization/DataMemory.dat", DUT.Datapath.DataMemory_inst.Data);
+		$readmemh("C:/VLSI/Projects/MIPS_Pipelined_32bit/Memory_Initialization/RegisterFile.dat", DUT.Datapath.RegisterFile_inst.Registers);
 
 		reset_n = 0;
 		@(negedge clk) reset_n = 1;

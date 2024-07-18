@@ -1,8 +1,11 @@
-## Pipelined MIPS Processor in SystemVerilog (Verilog)
+# Pipelined MIPS Processor in SystemVerilog (Verilog)
 
 This repository implements a 32-bit pipelined MIPS architecture using SystemVerilog.
 
-**Structure:**
+## Architecture
+![Architecture](Documentation/MIPS_Architecture.png)
+
+## Structure
 
 * **RTL/**: Source code for the pipelined MIPS processor
     * `MIPS_top.sv`: Top-level module integrating all components
@@ -21,11 +24,36 @@ This repository implements a 32-bit pipelined MIPS architecture using SystemVeri
     * `InstructionMemory.dat`: Initial instruction memory contents
     * `DataMemory.dat`: Initial data memory contents
     * `RegisterFile.dat`: Initial register file contents
-* **Verification/**: Testbench and test code
+* **Verification/**: Testbench, test code and TCL script
     * `MIPS_tb.sv`: Testbench for simulation
     * `test_code.s`: MIPS assembly test code
+    * `run_MIPS.do`: TCL script file for ModelSim automation
+    * `src_files.list`: List of paths to RTL files to be compiled
 * **Documentation/**: Documentation
     * `MIPS_pipelined_documentation.pdf`: Detailed design explanation
+
+## Instruction Handling:
+
+This pipelined MIPS processor supports a variety of instruction formats to provide a comprehensive instruction set:
+
+* **R-Format (Arithmetic):** These instructions perform arithmetic operations on register values, such as add, subtract, and shift operations.
+* **Immediate Instructions:**
+    * `addi`: Adds a constant value to a register.
+* **Load/Store Instructions:**
+    * `lw`: Loads data from memory into a register.
+    * `sw`: Stores data from a register to memory.
+* **Branch Instructions:**
+    * `beq`: Branches to a target address if the contents of two registers are equal.
+    * `bne`: Branches to a target address if the contents of two registers are not equal.
+
+## Hazard Handling and Exception Support:
+
+This pipelined MIPS processor implements techniques to ensure smooth instruction execution:
+
+* **Forwarding Unit:** This unit identifies data hazards and bypasses the pipeline stages to forward results directly to subsequent stages. This reduces stalls caused by data dependencies.
+* **Hazard Detection Unit:** This unit proactively detects control hazards, such as branch instructions. Stalls are strategically inserted to ensure the correct instruction is fetched when a branch is taken.
+* **Exception Support:** The processor can handle exceptions like overflow (arithmetic operations exceeding register size) and invalid instructions. These exceptions ensure program integrity and allow for proper error handling routines.
+
 
 ## Getting Started
 
@@ -50,17 +78,17 @@ do run_MIPS.do
 ```
 
 
-**Further Resources:**
+## Further Resources
 
 The included documentation provides a detailed explanation of the design and implementation process (refer to `Documentation` / `MIPS_pipelined_documentation.pdf`).
 
-**Contribution:**
+## Contribution
 
 We welcome contributions to this educational project. Feel free to submit pull requests for improvements or additional features.
 
-**Contact:**
+## Contact
 
-Click on the image
+Click on the image below
 
 <a href="https://beacons.ai/amrelbatarny" target="_blank">
   <img align="left" alt="Beacons" width="180px" src="https://www.colormango.com/development/boxshot/beacons-ai_154511.png" />
