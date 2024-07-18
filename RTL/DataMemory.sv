@@ -9,7 +9,7 @@ module DataMemory #(
     input [WORD_WIDTH-1:0] write_data,
     output reg [WORD_WIDTH-1:0] read_data
 );
-
+    
     reg [MEM_WIDTH-1:0] Data [0:MEM_DEPTH-1];
 
     always @(posedge clk) begin
