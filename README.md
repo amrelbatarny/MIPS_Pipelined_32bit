@@ -54,6 +54,19 @@ This pipelined MIPS processor implements techniques to ensure smooth instruction
 * **Hazard Detection Unit:** This unit proactively detects control hazards, such as branch instructions. Stalls are strategically inserted to ensure the correct instruction is fetched when a branch is taken.
 * **Exception Support:** The processor can handle exceptions like overflow (arithmetic operations exceeding register size) and invalid instructions. These exceptions ensure program integrity and allow for proper error handling routines.
 
+## Simulation Results
+
+###  Flow of instructions through the pipeline:
+![12.1](Documentation/QuestaSim_Snippets/12.1.png)
+
+###  Registers’ contents after the sequence of addi instructions:
+![12.2](Documentation/QuestaSim_Snippets/12.2.png)
+
+###  Initializing the array with contents of the registers:
+![12.3](Documentation/QuestaSim_Snippets/12.3.png)
+
+###  Sum of the array elements (0x13 + 0x95 + 0x18 + 0x3 + 0x63 + 0x47 = 0x16D) is stored in array[6]:
+![12.4](Documentation/QuestaSim_Snippets/12.4.png)
 
 ## Getting Started
 
